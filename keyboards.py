@@ -38,13 +38,18 @@ user_agreement_next_stage = InlineKeyboardMarkup(inline_keyboard=[
 ])
 
 product_selection = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text="⚡️ Купить 'Математика'", callback_data='product_selection')],
-    [InlineKeyboardButton(text="🚀 Купить 'Физика'", callback_data='product_selection')],
-    [InlineKeyboardButton(text="💎 Купить 'Математика + Физика'", callback_data='product_selection')],
+    [InlineKeyboardButton(text="⚡️ Купить 'Математика'", callback_data='math_payment')],
+    [InlineKeyboardButton(text="🚀 Купить 'Физика'", callback_data='physics_payment')],
+    [InlineKeyboardButton(text="💎 Купить 'Математика + Физика'", callback_data='combo_payment')],
     [InlineKeyboardButton(text='↩️ Вернуться в начало', callback_data='back_start')]
 
 ])
 
 short_agreement = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Теперь всё понятно!', callback_data='product_selection')],
+])
+
+payment_for_the_product = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='✅ Я оплатил(а)', callback_data='payment_trigger')],
+    [InlineKeyboardButton(text='↩️ Вернуться назад', callback_data='product_selection')],
 ])
