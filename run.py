@@ -7,7 +7,6 @@ from files.config import TOKEN
 from handlers import router
 
 async def main():
-    # Update this line
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode="HTML"))
     dp = Dispatcher(storage=MemoryStorage())
 
