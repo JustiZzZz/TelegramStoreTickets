@@ -1,6 +1,7 @@
 TOKEN = ''
 
-ADMIN_ID = ''
+ADMIN_ID = []
+
 
 SUCCESS_PAYMENT_MESSAGE = (
     "✅ <b>Оплата подтверждена!</b>\n\n"
@@ -24,4 +25,5 @@ MEDIA_PHYSICS = [
 ]
 VOICE_PHYSICS = [
     'AwACAgIAAxkBAAIDL2iFTPAZ7xLeRXmPFpj3IQ5P3IqyAAJcfwACv30oSOneBVdiHLGGNgQ'
+]
 ]
