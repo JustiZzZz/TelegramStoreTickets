@@ -12,6 +12,10 @@ back_menu = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="⬅️ Вернуться в меню", callback_data="back_start")]
 ])
 
+back_menu_new_msg = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="⬅️ Вернуться в меню", callback_data="back_start_new_msg")]
+])
+
 back_menu_close = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="Закрыть", callback_data="close_message")]
 ])
@@ -49,9 +53,19 @@ decline_menu = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="⬅️ Вернуться в меню", callback_data="back_start")]
 ])
 
-def admin_decline_keyboard(user_id: int):
+confirm_full_reset_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="🔴 ДА, Я ХОЧУ УДАЛИТЬ ВСЁ 🔴", callback_data="confirm_full_reset_yes")],
+    [InlineKeyboardButton(text="⬅️ Отмена", callback_data="confirm_full_reset_no")]
+])
+
+
+def get_admin_payment_keyboard(purchase_id: int):
     builder = InlineKeyboardBuilder()
     builder.button(
-        text="❌ Отклонить оплату", callback_data=f"decline_{user_id}"
+        text="✅ Подтвердить оплату", callback_data=f"approve_{purchase_id}"
     )
+    builder.button(
+        text="❌ Отклонить оплату", callback_data=f"decline_{purchase_id}"
+    )
+    builder.adjust(1)
     return builder.as_markup()
